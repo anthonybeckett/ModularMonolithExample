@@ -1,5 +1,8 @@
 using Evently.Api.Extensions;
 using Evently.Modules.Events.Api;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

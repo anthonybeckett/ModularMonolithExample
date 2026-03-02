@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Evently.Modules.Events.Api.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;

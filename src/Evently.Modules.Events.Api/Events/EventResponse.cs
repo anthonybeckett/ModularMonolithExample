@@ -1,3 +1,5 @@
+using System;
+
 namespace Evently.Modules.Events.Api.Events;
 
 public sealed record EventResponse(

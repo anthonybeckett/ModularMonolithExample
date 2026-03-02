@@ -1,5 +1,7 @@
 using Evently.Modules.Events.Api.Database;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Evently.Api.Extensions;
 

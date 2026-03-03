@@ -1,5 +1,6 @@
 using Evently.Api.Extensions;
 using Evently.Modules.Events.Api;
+using Evently.Modules.Events.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

@@ -1,5 +1,5 @@
+using Evently.Common.Domain;
 using Evently.Modules.Events.Application.Categories.CreateCategory;
-using Evently.Modules.Events.Domain.Abstractions;
 using Evently.Modules.Events.Presentation.ApiResults;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -23,6 +23,6 @@ internal static class CreateCategory
 
 	internal sealed class Request
 	{
-		public string Name { get; init; }
+		public required string Name { get; init; }
 	}
 }

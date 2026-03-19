@@ -1,4 +1,4 @@
-using Evently.Modules.Events.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Events.Domain.Categories;
 
 namespace Evently.Modules.Events.Domain.Events;
@@ -13,11 +13,11 @@ public sealed class Event : Entity
 
 	public Guid CategoryId { get; private set; }
 
-	public string Title { get; private set; }
+	public string Title { get; private set; } = null!;
 
-	public string Description { get; private set; }
+	public string Description { get; private set; } = null!;
 
-	public string Location { get; private set; }
+	public string Location { get; private set; } = null!;
 
 	public DateTime StartsAtUtc { get; private set; }
 

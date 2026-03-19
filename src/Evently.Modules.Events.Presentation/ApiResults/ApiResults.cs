@@ -1,6 +1,5 @@
-using Evently.Modules.Events.Domain.Abstractions;
+using Evently.Common.Domain;
 using Microsoft.AspNetCore.Http;
-using ValidationError = Evently.Modules.Events.Domain.Abstractions.ValidationError;
 
 namespace Evently.Modules.Events.Presentation.ApiResults;
 

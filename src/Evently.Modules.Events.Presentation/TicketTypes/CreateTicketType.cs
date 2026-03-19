@@ -1,5 +1,5 @@
+using Evently.Common.Domain;
 using Evently.Modules.Events.Application.TicketTypes.CreateTicketType;
-using Evently.Modules.Events.Domain.Abstractions;
 using Evently.Modules.Events.Presentation.ApiResults;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -30,11 +30,11 @@ internal static class CreateTicketType
 	{
 		public Guid EventId { get; init; }
 
-		public string Name { get; init; }
+		public required string Name { get; init; }
 
 		public decimal Price { get; init; }
 
-		public string Currency { get; init; }
+		public required string Currency { get; init; }
 
 		public decimal Quantity { get; init; }
 	}

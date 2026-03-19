@@ -1,5 +1,6 @@
 using System.Data.Common;
 using Dapper;
+using Evently.Common.Application.Data;
 using Evently.Modules.Events.Application.Abstractions.Data;
 using MediatR;
 

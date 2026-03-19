@@ -13,7 +13,7 @@ internal static class GetEvent
 	{
 		app.MapGet("events/{id}", async (Guid id, ISender sender) =>
 		{
-			EventResponse @event = await sender.Send(new GetEventQuery(id));
+			EventResponse? @event = await sender.Send(new GetEventQuery(id));
 
 			return @event is null ? Results.NotFound() : Results.Ok(@event);
 		}).WithTags(Tags.Events);

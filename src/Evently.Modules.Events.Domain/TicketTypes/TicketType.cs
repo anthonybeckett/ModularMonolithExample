@@ -1,4 +1,4 @@
-using Evently.Modules.Events.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Events.Domain.Events;
 
 namespace Evently.Modules.Events.Domain.TicketTypes;
@@ -13,11 +13,11 @@ public sealed class TicketType : Entity
 
 	public Guid EventId { get; private set; }
 
-	public string Name { get; private set; }
+	public string Name { get; private set; } = null!;
 
 	public decimal Price { get; private set; }
 
-	public string Currency { get; private set; }
+	public string Currency { get; private set; } = null!;
 
 	public decimal Quantity { get; private set; }
 

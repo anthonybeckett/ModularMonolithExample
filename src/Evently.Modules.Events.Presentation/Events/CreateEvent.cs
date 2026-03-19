@@ -1,7 +1,5 @@
-using Evently.Modules.Events.Application.Events;
+using Evently.Common.Domain;
 using Evently.Modules.Events.Application.Events.CreateEvent;
-using Evently.Modules.Events.Domain.Abstractions;
-using Evently.Modules.Events.Domain.Events;
 using Evently.Modules.Events.Presentation.ApiResults;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -33,11 +31,11 @@ internal static class CreateEvent
 	{
 		public Guid CategoryId { get; init; }
 
-		public string Title { get; init; }
+		public required string Title { get; init; }
 
-		public string Description { get; init; }
+		public required string Description { get; init; }
 
-		public string Location { get; init; }
+		public required string Location { get; init; }
 
 		public DateTime StartsAtUtc { get; init; }
 

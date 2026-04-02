@@ -10,6 +10,7 @@
     <Project Path="src/Evently.Common.Application/Evently.Common.Application.csproj" />
     <Project Path="src/Evently.Common.Domain/Evently.Common.Domain.csproj" />
     <Project Path="src/Evently.Common.Infrastructure/Evently.Common.Infrastructure.csproj" />
+    <Project Path="src/Evently.Common.Presentation/Evently.Common.Presentation.csproj" />
   </Folder>
   <Folder Name="/src/Modules/" />
   <Folder Name="/src/Modules/Events/">

@@ -1,8 +1,9 @@
 using Evently.Common.Application.Caching;
 using Evently.Common.Domain;
+using Evently.Common.Presentation.ApiResults;
+using Evently.Common.Presentation.Endpoints;
 using Evently.Modules.Events.Application.Categories.GetCategories;
 using Evently.Modules.Events.Application.Categories.GetCategory;
-using Evently.Modules.Events.Presentation.ApiResults;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -11,9 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Evently.Modules.Events.Presentation.Categories;
 
-internal static class GetCategories
+internal sealed class GetCategories : IEndpoint
 {
-	public static void MapEndpoint(IEndpointRouteBuilder app)
+	public void MapEndpoint(IEndpointRouteBuilder app)
 	{
 		app.MapGet("categories", async (ISender sender, ICacheService cacheService) =>
 			{
@@ -32,7 +33,7 @@ internal static class GetCategories
 					await cacheService.SetAsync("categories", result.Value);
 				}
 
-				return result.Match(Results.Ok, ApiResults.ApiResults.Problem);
+				return result.Match(Results.Ok, Common.Presentation.ApiResults.ApiResults.Problem);
 			})
 			.WithTags(Tags.Categories);
 	}

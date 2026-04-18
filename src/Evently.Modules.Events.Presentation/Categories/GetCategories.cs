@@ -18,7 +18,7 @@ internal sealed class GetCategories : IEndpoint
 	{
 		app.MapGet("categories", async (ISender sender, ICacheService cacheService) =>
 			{
-				IReadOnlyCollection<CategoryResponse> cachedCategoryResponse = await cacheService.GetAsync<IReadOnlyCollection<CategoryResponse>>(
+				IReadOnlyCollection<CategoryResponse>? cachedCategoryResponse = await cacheService.GetAsync<IReadOnlyCollection<CategoryResponse>>(
 					"categories");
 
 				if (cachedCategoryResponse is not null)

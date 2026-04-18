@@ -14,23 +14,32 @@ namespace Evently.Common.Infrastructure;
 
 public static class InfrastructureConfiguration
 {
-	public static IServiceCollection AddInfrastructure(this IServiceCollection services, string databaseConnectionString, string redisConnectionString)
-	{
-		NpgsqlDataSource npgsqlDataSource = new NpgsqlDataSourceBuilder(databaseConnectionString).Build();
-		services.TryAddSingleton(npgsqlDataSource);
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services,
+        string databaseConnectionString, string redisConnectionString)
+    {
+        NpgsqlDataSource npgsqlDataSource = new NpgsqlDataSourceBuilder(databaseConnectionString).Build();
+        services.TryAddSingleton(npgsqlDataSource);
 
-		services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
-		
-		services.TryAddSingleton<PublishDomainEventsInterceptor>();
+        services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
-		services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
-		
-		IConnectionMultiplexer connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnectionString);
-		services.TryAddSingleton<IConnectionMultiplexer>(connectionMultiplexer);
-		services.AddStackExchangeRedisCache(options => options.ConnectionMultiplexerFactory = () => Task.FromResult(connectionMultiplexer));
-		
-		services.TryAddSingleton<ICacheService, CacheService>();
-		
-		return services;
-	}
+        services.TryAddSingleton<PublishDomainEventsInterceptor>();
+
+        services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
+
+        try
+        {
+            IConnectionMultiplexer connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnectionString);
+            services.TryAddSingleton<IConnectionMultiplexer>(connectionMultiplexer);
+            services.AddStackExchangeRedisCache(options =>
+                options.ConnectionMultiplexerFactory = () => Task.FromResult(connectionMultiplexer));
+        }
+        catch
+        {
+            services.AddDistributedMemoryCache();
+        }
+
+        services.TryAddSingleton<ICacheService, CacheService>();
+
+        return services;
+    }
 }

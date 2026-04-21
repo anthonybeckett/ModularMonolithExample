@@ -47,7 +47,7 @@ builder.Services.AddHealthChecks()
 
 builder.Services.AddEventsModule(builder.Configuration);
 builder.Services.AddUsersModule(builder.Configuration);
-builder.Services.AddTicketingModule(builder.Configuration);
+builder.Services.AddTicketingModule();
 
 WebApplication app = builder.Build();
 

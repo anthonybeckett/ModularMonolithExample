@@ -18,6 +18,7 @@
     <Project Path="src/Evently.Modules.Events.Domain/Evently.Modules.Events.Domain.csproj" />
     <Project Path="src/Evently.Modules.Events.Infrastructure/Evently.Modules.Events.Infrastructure.csproj" />
     <Project Path="src/Evently.Modules.Events.Presentation/Evently.Modules.Events.Presentation.csproj" />
+    <Project Path="src/Evently.Modules.Events.PublicApi/Evently.Modules.Events.PublicApi.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Ticketing/">
     <Project Path="src/Evently.Modules.Ticketing.Application/Evently.Modules.Ticketing.Application.csproj" />
@@ -30,5 +31,6 @@
     <Project Path="src/Evently.Modules.Users.Domain/Evently.Modules.Users.Domain.csproj" />
     <Project Path="src/Evently.Modules.Users.Infrastructure/Evently.Modules.Users.Infrastructure.csproj" />
     <Project Path="src/Evently.Modules.Users.Presentation/Evently.Modules.Users.Presentation.csproj" />
+    <Project Path="src/Evently.Modules.Users.PublicApi/Evently.Modules.Users.PublicApi.csproj" />
   </Folder>
 </Solution>

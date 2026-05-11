@@ -10,11 +10,11 @@ public sealed class User : Entity
 
     public Guid Id { get; init; }
 
-    public string? Email { get; private set; }
+    public string Email { get; private set; }
 
-    public string? FirstName { get; set; }
+    public string FirstName { get; set; }
 
-    public string? LastName { get; set; }
+    public string LastName { get; set; }
 
     public static User Create(string email, string firstName, string lastName)
     {

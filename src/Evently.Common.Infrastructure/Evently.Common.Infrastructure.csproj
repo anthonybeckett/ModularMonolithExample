@@ -6,6 +6,7 @@
     <ItemGroup>
         <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
         <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="9.0.0" />
+        <PackageReference Include="MassTransit" Version="9.1.1" />
         <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.7" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
         <PackageReference Update="SonarAnalyzer.CSharp" Version="10.25.0.139117">

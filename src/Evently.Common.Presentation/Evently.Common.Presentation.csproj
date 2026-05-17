@@ -1,14 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <ItemGroup>
-        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Evently.Common.Domain\Evently.Common.Domain.csproj" />
+        <ProjectReference Include="..\Evently.Common.Domain\Evently.Common.Domain.csproj"/>
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Update="SonarAnalyzer.CSharp" Version="10.25.0.139117">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
+        <PackageReference Include="MassTransit.Abstractions" Version="9.1.1"/>
+        <PackageReference Update="SonarAnalyzer.CSharp" Version="10.25.0.139117">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 </Project>
